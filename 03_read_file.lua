@@ -62,4 +62,4 @@ local function print_hex_dump(filename)
 end
 
 
-print_hex_dump('hello_world.lua')
+print_hex_dump('01_hello_world.lua')
