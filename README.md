@@ -1,7 +1,7 @@
 luatrials
 =========
 
-Personal record of my trials learning Lua
+Personal record of my trials learning Lua (and git.. again)
 
 Nothing interesting
 
