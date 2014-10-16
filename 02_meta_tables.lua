@@ -81,7 +81,7 @@ MySqlConnection.__tostring = function(self)
 end
 
 
-local conn = MySqlConnection('margaret', 'root', 'farrell')
+local conn = MySqlConnection('db1', 'root', 'password')
 conn:connect()
 print(conn)
 
