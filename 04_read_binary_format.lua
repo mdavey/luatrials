@@ -56,7 +56,6 @@ Bytes.toint32 = function(self)
     if self.length ~= 4 then
         error('int32 is 4 bytes')
     end
-    print(self.data[1], self.data[2], self.data[3], self.data[4])
     return (self.data[4] * (256^3)) +
             (self.data[3] * (256^2)) +
             (self.data[2] * (256^1)) +
@@ -108,13 +107,10 @@ local readindex = function(filename)
 
     -- number index entries
     local indexsize = Bytes(file:read(4)):toint32()
-    indexsize = 100
-    print(indexsize)
 
     local index = {}
 
     for filenum = 1, indexsize  do
-        print(file:seek('cur'))
         table.insert(index, {
             name   = readuntilnul(file),
             offset = Bytes(file:read(4)):toint32(),
@@ -134,7 +130,7 @@ end
 local index = readindex('D:\\Steam\\steamapps\\common\\Crimsonland\\data.pak')
 
 for _,v in ipairs(index) do
-    -- print(string.format('name:%s offset:%d length:%d', v.name, v.offset, v.length))
+    print(string.format('name:%s offset:%d length:%d', v.name, v.offset, v.length))
 end
 
 
