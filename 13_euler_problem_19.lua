@@ -14,13 +14,13 @@ How many Sundays fell on the first of the month during the twentieth century (1 
 
 --------------------------------
 
-The mistakes I made doing was reading the text incorrectly:
+The mistakes I made were related to reading the text incorrectly:
   * 1900-01-01 was monday, but start counting from 1901-01-01
   * Sundays on the first of any month (not sundays in the first month)
 
 I'm not sure if I'm really learning anything doing these puzzles.  The stdlib
-is usally not helpful for Project Euler puzzles and they test problem solving
-skills more than programming.
+is often isn't not helpful for Project Euler puzzles and they test problem 
+solving skills more than programming.
 
 Might have to try rewritting some of my old programs in lua for something
 more realistic.
