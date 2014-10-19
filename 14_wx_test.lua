@@ -1,65 +1,36 @@
 local wx = require("wx")
 
-local frame = nil
-local panel = nil
 
-
-local function makeimage(width, height)
-    local bitmap = wx.wxBitmap(width, height, 32)
+local function makeimage()
+    local image = wx.wxImage(510, 510)
     
-    local dc = wx.wxMemoryDC()
-    dc:SelectObject(bitmap)
-    
-    local pen = wx.wxPen()    
-    
-    for x = 0, 255 do
-        for y = 0, 255 do           
-            pen:SetColour(wx.wxColour(x, 0, y))
-            dc:SetPen(pen)
-            dc:DrawPoint(x, y)
+    for x = 0, 510 do
+        for y = 0, 510 do
+            local r = x
+            local g = 0
+            local b = y
+            
+            if x > 255 then r = (510-x) end
+            if y > 255 then b = (510-y) end
+            
+            image:SetRGB(x, y, r, g, b)
         end
     end
     
-    dc:delete()
-    
-    return bitmap
+    return image
 end
 
-local function rotatebitmap(bitmap, angle)
-    local img = bitmap:ConvertToImage()
-    local img_centre = wx.wxPoint(0, 0) -- img:GetWidth()/2, img:GetHeight()/2 )
-    img = img:Rotate(angle, img_centre)
-    -- img:Rotate90()
-    return wx.wxBitmap(img)
-end
+local frame = nil
+local panel = nil
+local image = makeimage()
 
-local bitmap = makeimage(255, 255)
 
 -- paint event handler for the frame that's called by wxEVT_PAINT
 local function OnPaint(event)
     local dc = wx.wxPaintDC(panel)
-
-    dc:DrawBitmap(bitmap, 0, 0, false)
-    dc:DrawBitmap(rotatebitmap(bitmap, 90), 255, 0, false)
-    dc:DrawBitmap(rotatebitmap(bitmap, 180), 0, 255, false)
-    dc:DrawBitmap(rotatebitmap(bitmap, 270), 255, 255, false)
     
-    -- for x = 1, 255 do
-    --     for y = 1, 255 do
-    --         local colour = wx.wxColour(x, 0, y)
-    --         local pen = wx.wxPen()
-    --         pen:SetColour(colour)
-    --         
-    --         dc:SetPen(pen)
-    --         dc:DrawPoint(x, y)
-    --     end
-    -- end
-
-    -- dc:DrawRectangle(10, 10, 300, 300);
-    -- dc:DrawRoundedRectangle(20, 20, 280, 280, 20);
-    -- dc:DrawEllipse(30, 30, 260, 260);
-    -- dc:DrawText("A test string", 50, 150);
-
+    dc:DrawBitmap(wx.wxBitmap(image), 0, 0, false)
+    
     dc:delete()
 end
 
@@ -72,7 +43,7 @@ local function main()
                         wx.wxID_ANY,
                         "wxLua Minimal Demo",
                         wx.wxDefaultPosition,
-                        wx.wxSize(450, 450),
+                        wx.wxSize(600, 600),
                         wx.wxDEFAULT_FRAME_STYLE)
 
     -- create a single child window, wxWidgets will set the size to fill frame
