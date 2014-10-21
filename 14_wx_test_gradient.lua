@@ -1,3 +1,22 @@
+--[[
+
+Well I'll be.  wxLua actually makes about 10x more sense than IUP...
+
+The offically documentation is okay, though kinda large:  http://docs.wxwidgets.org/2.8/
+
+Plenty of examples though, and the Python examples are close syntactically too.
+
+I like the idea behind wxLua.exe and wxLuaFreeze.  That's was actually a bit
+question make in my head.  Even more so after hearing about hard it was to build
+a compat IUP library.
+
+Still lots of typing to do basic stuff, and there's tons of features that I assume
+I'm going to have to learn.  I was really thinking about using SDL and essentially
+writting a keyboard driven program to avoid all this UI crap...
+
+]]
+
+
 local wx = require("wx")
 
 
