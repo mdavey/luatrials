@@ -1,3 +1,5 @@
+-- Description: wxLua program that can execute lua --
+
 --[[
 
 Docs:  [http://docs.wxwidgets.org/3.0/annotated.html](http://docs.wxwidgets.org/3.0/annotated.html)

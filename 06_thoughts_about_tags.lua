@@ -1,3 +1,5 @@
+-- Description: Brain dump regarding tagging file offsets in a hex editor --
+
 --[[
 
 End goal is a hex editor to help with reverse engineering file formats

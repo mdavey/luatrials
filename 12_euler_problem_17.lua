@@ -1,3 +1,5 @@
+-- Description: Project Euler problem 17 - Numbers to words --
+
 --[[
 
 https://projecteuler.net/problem=17

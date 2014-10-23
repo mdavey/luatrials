@@ -1,3 +1,5 @@
+-- Description: Project Euler problem 19 - Dates, loop, and leapyears --
+
 --[[
 
 You are given the following information, but you may prefer to do some research for yourself.

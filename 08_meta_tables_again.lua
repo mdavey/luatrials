@@ -1,3 +1,5 @@
+-- Description: Another look at metatables, in particular __index --
+
 
 -- table -> string
 local function dumptable(t)

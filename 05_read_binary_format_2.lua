@@ -1,3 +1,5 @@
+-- Description: Updated binary file io to read Crimsonland data files --
+
 --[[
 
 This is my 2nd attempt to re-write my Crimsonland data file python script in
@@ -20,9 +22,7 @@ Use require('strict') always, always fucking always
 
 ]]
 
-
 require('strict')
-
 
 
 BinaryFile = {}
@@ -98,11 +98,8 @@ local readindex = function(filename)
 end
 
 
-
 local index = readindex('D:\\Steam\\steamapps\\common\\Crimsonland\\data.pak')
 
 for _,v in ipairs(index) do
     print(string.format('name:%s offset:%d length:%d', v.name, v.offset, v.length))
 end
-
-

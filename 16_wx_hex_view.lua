@@ -1,6 +1,8 @@
+-- Description: wxLua program to display a simple hex listing of a file --
+
 --[[
 
-Docs:  http://docs.wxwidgets.org/3.0/annotated.html
+Docs:  [http://docs.wxwidgets.org/3.0/annotated.html](http://docs.wxwidgets.org/3.0/annotated.html)
 
 ]]
 

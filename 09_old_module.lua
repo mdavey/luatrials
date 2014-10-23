@@ -1,3 +1,5 @@
+-- Description: Old module syntax (<= 5.1?) --
+
 module('oldmodule')
 
 

@@ -1,3 +1,5 @@
+-- Description: Binary file io to read Crimsonland data files --
+
 --[[
 
 This is an attempt to re-write my Crimsonland data file pythong script in lua.

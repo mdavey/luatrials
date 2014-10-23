@@ -1,3 +1,5 @@
+-- Description: wxLua First program.  Displays a gradient --
+
 --[[
 
 Well I'll be.  wxLua actually makes about 10x more sense than IUP...

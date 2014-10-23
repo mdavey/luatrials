@@ -1,4 +1,4 @@
--- I kinda, maybe, sortof know what I'm doing
+-- Description: Calling chunks and injecting enviroments --
 
 
 function fail()

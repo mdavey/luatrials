@@ -1,3 +1,5 @@
+-- Description: Testing the old and new module formats --
+
 
 assert(_VERSION == 'Lua 5.2')
 

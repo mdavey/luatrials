@@ -1,3 +1,4 @@
+-- Description: New module syntax (>= 5.2?) --
 
 -- This contaminants the file that requires...
 -- require('strict')
