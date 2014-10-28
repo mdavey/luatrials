@@ -29,3 +29,4 @@ Filename  | Description
 [`16_wx_hex_view.lua`](16_wx_hex_view.lua)  |  wxLua program to display a simple hex listing of a file
 [`17_build_readme.lua`](17_build_readme.lua)  |  Attempt to auto update README.md with an index
 [`18_wx_pattern_matching.lua`](18_wx_pattern_matching.lua)  |  wxLua program to test lua pattern matching
+[`19_wx_scrollbars.lua`](19_wx_scrollbars.lua)  |  wxLua program to test custom scroll bars
