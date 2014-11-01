@@ -6,6 +6,55 @@ wxWidgets docs:  [http://docs.wxwidgets.org/3.0/annotated.html](http://docs.wxwi
 
 wxLua docs: [http://wxlua.sourceforge.net/docs/wxluaref.html](http://wxlua.sourceforge.net/docs/wxluaref.html)
 
+
+
+-- Hmmm
+
+local fileAccess = FileAccess.new(filename)
+local hexView    = HexView.new(fileAccess)
+
+hexView.setBytesPerLine(16)
+local lines = hexView.readLines(8, 20)
+
+for i=1, #lines do
+    hexViewControl.draw(lines[i].offset, lines[i].hex, lines[i].assci)
+end
+
+-- I think that works, mostly
+-- Perhaps calling hexView currentScreen?  More obvious that it's cached?
+--
+-- Question is how to do:  click.x + click.y  ->  offset[321] with value " " ?
+-- HexViewControl should be able to work it out based on bytesPerLine without
+-- much work.
+
+-- Perhaps this is simplier
+
+local hexRegion = new HexRegion(filename)  -- init
+hexRegion:setBytesPerLine(16)              -- init
+hexRegion:setLinesRange(8, 20)             -- cache here, call on resize
+local lines = hexRegion:getSelectedLines() -- call on paint with mucking around
+
+
+-- No, need plain old stuff like file size to
+
+-- init
+local f = new FileAccess(filename)
+local size = f:getSize()
+local currentRegion = f.getHexRegion(8, 20, 16) -- start, end, bytes per line
+
+-- inside onpaint
+local lines = hexRegion:getLines()  -- already cached in current region
+for i=1, #lines do
+    hexViewControl.draw(lines[i])   -- lines.offset, lines.bytes[], lines.ascci[] ?
+end
+
+-- inside onresize / scroll
+currentRegion = f.getHexRegion(scrollBar:getValue(), scrollBar:getValue() + visibleLines, bytesPerLine)
+
+-- Who owns FileAccess?  I guess HexViewControl
+local hexViewControl = HexViewControl.new(frame)
+hexViewControl.setFile(filename) -- Does init here  I think that's fine
+
 ]]
 
 
