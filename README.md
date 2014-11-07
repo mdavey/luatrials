@@ -31,3 +31,7 @@ Filename  | Description
 [`18_wx_pattern_matching.lua`](18_wx_pattern_matching.lua)  |  wxLua program to test lua pattern matching
 [`19_wx_scrollbars.lua`](19_wx_scrollbars.lua)  |  wxLua program to test custom scroll bars
 [`20_wx_text_drawing.lua`](20_wx_text_drawing.lua)  |  wxLua program to test buffered text drawing
+[`21_wx_text_drawing_2.lua`](21_wx_text_drawing_2.lua)  |  wxLua program to test buffered text drawing Again
+[`22_base64.lua`](22_base64.lua)  |  Base64 encoder (just for fun)
+[`23_base64_tests.lua`](23_base64_tests.lua)  |  Testing without a test library
+[`24_functional.lua`](24_functional.lua)  |  Functional Programming... No, I don't kow what this is
