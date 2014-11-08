@@ -36,5 +36,27 @@ print(table.concat(map({2, 3, 5}, function(i) return string.rep('#', i) end), '_
 
 -- Print 20 strings, or random characters (A-Z) of random length
 -- Now that I think about it, let's not continue...
-each(collect(function() return table.concat(collect(function(i) return string.char(math.random(65, 65+26)) end, math.random(20, 40))) end, 20), function(i) print(i) end)
+each(collect(function() 
+    return table.concat(collect(function(i) 
+        return string.char(math.random(65, 65+26)) 
+    end, math.random(20, 40))) 
+end, 20), function(i) 
+    print(i) 
+end)
+
+
+-- Still doesn't look good...
+local randomstring = function()
+    return table.concat(collect(function() 
+        return string.char(math.random(65, 65+26)) 
+    end, math.random(20, 40)))
+end
+
+each(collect(randomstring, 20), function(s) print(s) end)
+
+
+-- Hmmm...
+local randomchar    = function() return string.char(math.random(65, 65+25)) end
+local randomstring  = function() return table.concat(collect(randomchar, math.random(20, 40))) end
+each(collect(randomstring, 20), print)
 
