@@ -8,13 +8,9 @@ This shouldn't have taken over 2 hours to write.  God I suck.
 
 So many little mistakes, off by one errors with padding
 
-23 should be unit testing
+-- Lookup tables:  Surely faster, but didn't turn out to 
+-- be that much simplier, readable or shorter
 
-]]
-
-
---[[
--- Well, it's probably quicker, but not much more simple, readable or shorter
 local a = {}
 local b = {}
 for i=0, 63 do
