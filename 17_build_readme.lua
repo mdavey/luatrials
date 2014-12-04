@@ -1,7 +1,7 @@
 --Description: Attempt to auto update README.md with an index --
 
+local lfs = require('lfs')
 
-local wx = require("wx")
 
 local header = [[
 luatrials
@@ -18,21 +18,28 @@ Filename  | Description
 --------- | -----------]]
 
 
-local function getfilenames(dir, spec)
+local function getfilenames(dir, ext)
     dir = dir or '.'
-    spec = spec or '*'
+    ext = ext or '.lua'
+
+    local filenames = {}
+
+    for filename in lfs.dir(dir) do
+        if filename:sub(-#ext) == ext then
+            table.insert(filenames, filename)
+        end
+    end
     
-    -- nothing inbuilt to do directory access (!?)
-    -- io.popen (and os.execute) opens a console window
-    -- normal option is just to use posix or LuaFileSystem libraries
-    -- But fuck it, wxLua it is
-    
-    local _,allfiles = wx.wxDir.GetAllFiles(dir, spec, wx.wxDIR_FILES)    
-    return allfiles
+    return filenames
 end
 
 local function commentdescription(filename)
     local f = io.open(filename, 'r')
+    
+    if f == nil then 
+        error('Unable to open file for reading: ' .. filename) 
+    end
+    
     local top = f:read(256)
     f:close()
     
@@ -54,22 +61,16 @@ local function longest(t)
     return best
 end
 
-local luafiles = getfilenames('.', '*.lua')
+local luafiles = getfilenames('.', '.lua')
 
---     -2 to account for the leading './',
 -- and +2 for the brackets we'll add later
-local filenamewidth = #longest(luafiles)
+local filenamewidth = #longest(luafiles) + 2
 
 print(header)
 
-for i,v in ipairs(luafiles) do
-    local filename = v:sub(3)    
+for _,filename in ipairs(luafiles) do  
     local description = commentdescription(filename) or '(Blank)'
-    -- doesn't look great
-    -- local line = string.format('%2d.  %-' .. filenamewidth .. 's  %s', i, '[' .. filename .. ']', description)
-    
     local line = string.format('[`%s`](%s)  |  %s', filename, filename, description)
-    
     print(line)
 end
 

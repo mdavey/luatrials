@@ -35,4 +35,6 @@ Filename  | Description
 [`22_base64.lua`](22_base64.lua)  |  Base64 encoder (just for fun)
 [`23_base64_tests.lua`](23_base64_tests.lua)  |  Testing without a test library
 [`24_functional.lua`](24_functional.lua)  |  Functional Programming... No, I don't kow what this is
-[`25_wx_youtubedl_gui.lua`](25_wx_youtubedl_gui.lua)  |  wx GUI testing async reading from other processe
+[`25_wx_youtubedl_gui.lua`](25_wx_youtubedl_gui.lua)  |  wx GUI testing async reading from other processes
+[`26_wow_load_savedvars.lua`](26_wow_load_savedvars.lua)  |  Read an WoW addon's saved variables data file
+[`27_wow_read_karaidtrackerdb.lua`](27_wow_read_karaidtrackerdb.lua)  |  Read saved variables for WoW addon RaidTracker
