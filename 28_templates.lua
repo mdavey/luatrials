@@ -22,7 +22,7 @@ end
 
 function templates._readfile(filename)
     local f = io.open(filename, 'r')
-    if f == nil then error('Unable to open file' .. filename) end
+    if f == nil then error('Unable to open file' .. filename .. ' for reading') end
     local data = f:read('*a')
     f:close()
     return data
@@ -32,14 +32,22 @@ function templates:refresh()
     for filename in lfs.dir(self.dir) do
         if filename:sub(-5) == '.html' then
             local basename = filename:sub(1, -6)
-            print('loading', filename, 'as', basename)
             self.partials[basename] = self._readfile(self.dir ..'/' .. filename)
         end
     end
 end
 
 function templates:render(name, data)
+    data = data ~= nil and data or {}
     return lustache:render(self.partials[name], data, self.partials)
+end
+
+function templates:rendertofile(name, data, filename)
+    local text = self:render(name, data)
+    local f = io.open(filename, 'w')
+    if f == nil then error('Unable to open ' .. filename .. ' for writting') end
+    f:write(text)
+    f:close()
 end
 
 

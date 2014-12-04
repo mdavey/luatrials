@@ -1,0 +1,13 @@
+<html>
+    <body>
+        <h1>{{ title }}</h1>
+        
+        <ul>
+        {{# raids }}
+            <li>
+                <a href="raid_{{ key }}.html">Raid @ {{ timestart }} in {{ zones }} with {{ numplayers }} players for {{ timelength }}</a>
+            </li>
+        {{/ raids }}
+        </ul>
+    </body>
+</html>
