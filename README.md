@@ -38,3 +38,4 @@ Filename  | Description
 [`25_wx_youtubedl_gui.lua`](25_wx_youtubedl_gui.lua)  |  wx GUI testing async reading from other processes
 [`26_wow_load_savedvars.lua`](26_wow_load_savedvars.lua)  |  Read an WoW addon's saved variables data file
 [`27_wow_read_karaidtrackerdb.lua`](27_wow_read_karaidtrackerdb.lua)  |  Read saved variables for WoW addon RaidTracker
+[`28_templates.lua`](28_templates.lua)  |  Wrapping lustache around html files
