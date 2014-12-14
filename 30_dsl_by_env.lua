@@ -1,4 +1,4 @@
--- Description: Silly idea about using fsetebcto make a dsl inside a function --
+-- Description: Silly idea about using setfenv make a dsl inside a function --
 
 -- html is just an idea, there's a lot more work to actually make it work
 --  * dont auto close some tags (br, hr)
