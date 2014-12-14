@@ -8,7 +8,7 @@ local lfs = require('lfs')
 Every .html file in specified directory is loaded as a partial
 Even when rendering a template we pick it out of the partials table
 
-It feels really hacking, but I think it will work well for me as a static
+It feels really hacky, but I think it will work okay as a static
 html generator
 ]]
 
