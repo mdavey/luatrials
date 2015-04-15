@@ -41,3 +41,4 @@ Filename  | Description
 [`28_templates.lua`](28_templates.lua)  |  Wrapping lustache around html files
 [`29_wow_glctrt_report.lua`](29_wow_glctrt_report.lua)  |  Testing static html generator for GL KT RaidTracker
 [`30_dsl_by_env.lua`](30_dsl_by_env.lua)  |  Silly idea about using setfenv make a dsl inside a function
+[`31_print_led_digits.lua`](31_print_led_digits.lua)  |  print numbers in an ASCII art LED style
