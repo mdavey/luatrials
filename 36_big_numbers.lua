@@ -1,5 +1,6 @@
--- Description: This is horrible.  The result of not thinking first --
+-- Description: Add BigNumbers together.  Only add. --
 
+-- yay stdlib
 local function table_reverse(t)
     local r = {}
     for i=#t, 1, -1 do
@@ -8,22 +9,26 @@ local function table_reverse(t)
     return r
 end
 
--- All this stuff should always return a new object.  Not modify itself
 
 -- Just for adding
 local BigNumber = {}
 
-local BigNumber_MT = {}
-BigNumber_MT.__index = BigNumber
-BigNumber_MT.__tostring = function(self)
-    return 'BigNumber: ' .. table.concat(table_reverse(self.v), '')
+BigNumber.__index = BigNumber
+
+function BigNumber.new(initial_value)
+    local obj = setmetatable({v={0}}, BigNumber)
+    if initial_value then
+        obj:set(initial_value)
+    end
+    return obj
 end
 
-function BigNumber.new()
-    return setmetatable({v={0}}, BigNumber_MT)
+function BigNumber:set(what)
+    self.v = {0}
+    self:inc(what)
 end
 
-function BigNumber:add(what)
+function BigNumber:inc(what)
     -- print(self, what)
     
     if type(what) == 'number' then
@@ -43,7 +48,7 @@ function BigNumber:add(what)
             self.v[place] = self.v[place] + value
 
             -- handle carries
-            self:normalise()
+            self:handle_carry()
 
             -- knock off the lsb
             what = math.floor(what / 10)    
@@ -51,15 +56,16 @@ function BigNumber:add(what)
         
     elseif type(what) == 'table' and what.v then
         for place=1, #what.v do
-            self.v[place] = self.v[place] + what.v[place]                        
+            if not self.v[place] then self.v[place] = 0 end
+            self.v[place] = self.v[place] + what.v[place]
         end
-        self:normalise()
+        self:handle_carry()
     else
         error('Unable to add: ' .. type(what))
     end
 end
 
-function BigNumber:normalise()
+function BigNumber:handle_carry()
     local place = 0
     while true do
         place = place + 1
@@ -69,6 +75,12 @@ function BigNumber:normalise()
         
         -- otherwise, carry values > 10
         -- 100% this is the stupid way to do this
+        --
+        -- next_value = math.floor(self.v[place] / 10)
+        -- if next_value > 0 then
+        --     self.v[place+1] = self.v[place+1] + next_value
+        --     self.v[place] = self.v[place] - (10 * next_value)
+        -- end
         while self.v[place] > 9 do
             self.v[place] = self.v[place] - 10
             if not self.v[place+1] then self.v[place+1] = 0 end
@@ -77,17 +89,18 @@ function BigNumber:normalise()
     end
 end
 
-
----[[
-local v = 1
-
-local num = BigNumber.new()
-num:add(1)
-
-
-for i=1, 1000, 1 do
-    v = v + v
-    num:add(num)
-    print(v, num)    
+function BigNumber.add(a, b)
+    local r = BigNumber.new()
+    r:inc(a)
+    r:inc(b)
+    return r
 end
---]]
+
+BigNumber.__add = BigNumber.add
+
+function BigNumber:__tostring()
+    return table.concat(table_reverse(self.v), '')
+end
+
+        
+return BigNumber
