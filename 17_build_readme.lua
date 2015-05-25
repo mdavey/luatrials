@@ -30,6 +30,8 @@ local function getfilenames(dir, ext)
         end
     end
     
+    table.sort(filenames)
+    
     return filenames
 end
 

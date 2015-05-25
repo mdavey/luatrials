@@ -1,10 +1,9 @@
 luatrials
 =========
 
-Personal record/diary of my trials learning Lua.
+Personal record/diary of my trials learning Lua
 
 Nothing interesting yet.  Perhaps one day.
-
 
 Index
 -----
@@ -43,3 +42,7 @@ Filename  | Description
 [`30_dsl_by_env.lua`](30_dsl_by_env.lua)  |  Silly idea about using setfenv make a dsl inside a function
 [`31_print_led_digits.lua`](31_print_led_digits.lua)  |  print numbers in an ASCII art LED style
 [`32_types.lua`](32_types.lua)  |  Simple function arguments and return type checking?
+[`33_five_problems_one_hour.lua`](33_five_problems_one_hour.lua)  |  Silly questions not answered in 60m
+[`34_svg.lua`](34_svg.lua)  |  Bad idea for generating super simple SVG markup
+[`35_svg_again.lua`](35_svg_again.lua)  |  Slightly better idea for working with SVG markup
+[`36_big_numbers.lua`](36_big_numbers.lua)  |  This is horrible.  The result of not thinking first
