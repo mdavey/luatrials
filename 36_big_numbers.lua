@@ -1,4 +1,4 @@
--- Description: Add BigNumbers together.  Only add. --
+-- Description: Adding BigNumbers together, only adding --
 
 -- yay stdlib
 local function table_reverse(t)

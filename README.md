@@ -45,4 +45,5 @@ Filename  | Description
 [`33_five_problems_one_hour.lua`](33_five_problems_one_hour.lua)  |  Silly questions not answered in 60m
 [`34_svg.lua`](34_svg.lua)  |  Bad idea for generating super simple SVG markup
 [`35_svg_again.lua`](35_svg_again.lua)  |  Slightly better idea for working with SVG markup
-[`36_big_numbers.lua`](36_big_numbers.lua)  |  This is horrible.  The result of not thinking first
+[`36_big_numbers.lua`](36_big_numbers.lua)  |  Adding BigNumbers together, only adding
+[`37_fib_numbers_again.lua`](37_fib_numbers_again.lua)  |  Fibonacci sequence again, this time witout overflowing
