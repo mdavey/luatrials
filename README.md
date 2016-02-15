@@ -45,5 +45,8 @@ Filename  | Description
 [`33_five_problems_one_hour.lua`](33_five_problems_one_hour.lua)  |  Silly questions not answered in 60m
 [`34_svg.lua`](34_svg.lua)  |  Bad idea for generating super simple SVG markup
 [`35_svg_again.lua`](35_svg_again.lua)  |  Slightly better idea for working with SVG markup
-[`36_big_numbers.lua`](36_big_numbers.lua)  |  Adding BigNumbers together, only adding
-[`37_fib_numbers_again.lua`](37_fib_numbers_again.lua)  |  Fibonacci sequence again, this time witout overflowing
+[`36_big_numbers.lua`](36_big_numbers.lua)  |  Adding BigNumbers together, and only adding
+[`37_fib_numbers_again.lua`](37_fib_numbers_again.lua)  |  Fibonacci sequence again, this time without overflowing
+[`38_happy_numbers.lua`](38_happy_numbers.lua)  |  Happy numbers, a Code Eval challange
+[`39_multiples_of_a_number.lua`](39_multiples_of_a_number.lua)  |  Multiplies of a number, another Code Eval easy challange
+[`40_copas.lua`](40_copas.lua)  |  Copas and async http tests for a new project
