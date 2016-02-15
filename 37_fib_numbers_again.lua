@@ -1,4 +1,4 @@
--- Description: Fibonacci sequence again, this time witout overflowing --
+-- Description: Fibonacci sequence again, this time without overflowing --
 
 local BigNumber = require('36_big_numbers')
 
