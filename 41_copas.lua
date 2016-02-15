@@ -1,3 +1,5 @@
+-- Description: Copas and async http tests for a new project --
+
 -- so, this doesn't work on lua52 because of a luasocket bug (yeild, c boundry stuff)
 -- luajit wants 5.1 libraries, but luarocks from os only cares about 52
 -- probably should just remove all the os/platform packages and do it myself

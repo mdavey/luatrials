@@ -1,4 +1,4 @@
-
+-- Description: Multiplies of a number, another Code Eval easy challange --
 
 --[[
 Given numbers x and n, where n is a power of 2, print out the smallest multiple

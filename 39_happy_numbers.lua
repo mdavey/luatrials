@@ -1,4 +1,4 @@
-
+-- Description: Happy numbers, a Code Eval challange --
 
 --[[
 https://www.codeeval.com/open_challenges/39/
